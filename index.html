@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Forever ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #10090b;
+      color: #f9e9e5;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      border-bottom: 1px solid #513039;
+      background: #10090bee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #e5bd79;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    nav a {
+      color: #f9e9e5;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: #e5bd79;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(ellipse at center, #501923 0%, #241016 43%, #10090b 78%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      color: #e5bd79;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.15;
+      margin: 22px 0;
+      font-weight: normal;
+    }
+
+    h1 span {
+      color: #e5bd79;
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 470px;
+      color: #d8bfc1;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      border: 1px solid #d9ad69;
+      border-radius: 3px;
+      padding: 12px 23px;
+      background: #a52d43;
+      color: white;
+      font-family: inherit;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: #c44258;
+      transform: translateY(-2px);
+    }
+
+    .gold {
+      color: #e5bd79;
+    }
+
+    .heart {
+      color: #d84960;
+      animation: beat 1.3s infinite;
+      display: inline-block;
+    }
+
+    @keyframes beat {
+      50% { transform: scale(1.22); }
+    }
+
+    .petal {
+      position: absolute;
+      bottom: -30px;
+      color: #bc5265;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: floatUp 9s linear infinite;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    section {
+      padding: 85px 7%;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: normal;
+      margin: 10px 0 12px;
+    }
+
+    .intro {
+      color: #cdb6b8;
+      max-width: 540px;
+      margin: 0 auto 38px;
+    }
+
+    .memories {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .memory {
+      text-align: left;
+      background: #1d1115;
+      border: 1px solid #513039;
+      padding: 25px;
+      border-radius: 4px;
+      transition: 0.25s;
+    }
+
+    .memory:hover {
+      border-color: #d9ad69;
+      transform: translateY(-5px);
+    }
+
+    .memory .symbol {
+      font-size: 27px;
+    }
+
+    .memory h3 {
+      color: #e5bd79;
+      font-weight: normal;
+      font-size: 21px;
+      margin: 12px 0;
+    }
+
+    .memory p {
+      color: #cdb6b8;
+      font-size: 14px;
+    }
+
+    #quiz {
+      background: #1b0d12;
+      border-top: 1px solid #382027;
+      border-bottom: 1px solid #382027;
+    }
+
+    .quiz-box {
+      max-width: 570px;
+      margin: auto;
+      padding: 30px;
+      background: #10090b;
+      border: 1px solid #69404a;
+      border-radius: 5px;
+    }
+
+    #question {
+      font-size: 23px;
+      margin: 12px 0 22px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 12px;
+    }
+
+    .answer {
+      background: #24151a;
+      color: #f9e9e5;
+      border: 1px solid #69404a;
+      padding: 12px;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .answer:hover {
+      border-color: #e5bd79;
+      background: #381923;
+    }
+
+    #quiz-feedback {
+      color: #e5bd79;
+      margin-top: 18px;
+      min-height: 28px;
+    }
+
+    .letter-section {
+      background:
+        radial-gradient(ellipse at center, #38151e 0%, #10090b 72%);
+    }
+
+    .envelope {
+      font-size: 75px;
+      margin: 20px 0;
+    }
+
+    #love-letter {
+      display: none;
+      max-width: 600px;
+      margin: 28px auto 0;
+      padding: 30px;
+      text-align: left;
+      background: #f5e7d3;
+      color: #481c27;
+      border: 3px double #b58b50;
+      box-shadow: 0 0 35px #0006;
+      animation: appear 0.8s ease;
+    }
+
+    #love-letter h3 {
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 15px;
+      color: #8e253b;
+    }
+
+    #love-letter p {
+      margin-bottom: 14px;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #513039;
+      color: #b99b9f;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 14px 5%;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 11px;
+      }
+
+      .memories {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .quiz-box {
+        padding: 22px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">You & Me <span class="heart">♥</span></div>
+    <div>
+      <a href="#story">Our Story</a>
+      <a href="#quiz">Love Quiz</a>
+      <a href="#letter">My Letter</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="eyebrow">A little corner of the universe</div>
+    <h1>To my <span id="her-name">Shivani</span></h1>
+    <p>
+      In a world full of people, somehow my heart found you.
+      This little website is just one small way of saying
+      how much you mean to me.
+    </p>
+    <button class="button" onclick="startSurprise()">
+      Open your surprise ♥
+    </button>
+    <p id="welcome-message" style="margin-top:22px; color:#e5bd79;"></p>
+  </header>
+
+  <section id="story">
+    <div class="eyebrow">Chapter One</div>
+    <h2 class="section-title">Our Little Love Story</h2>
+    <p class="intro">
+      Some memories become special simply because
+      you're in them. Here are a few little chapters of us.
+    </p>
+
+    <div class="memories">
+      <article class="memory">
+        <div class="symbol">🌹</div>
+        <h3>Where It Began</h3>
+        <p>
+          Every beautiful story has a beginning.
+          Ours became special when our paths crossed.
+        </p>
+      </article>
+
+      <article class="memory">
+        <div class="symbol">✨</div>
+        <h3>My Favorite Memory</h3>
+        <p>
+          It's the little moments with you that stay
+          in my heart long after they end.
+        </p>
+      </article>
+
+      <article class="memory">
+        <div class="symbol">♾️</div>
+        <h3>Our Tomorrow</h3>
+        <p>
+          More laughs, more adventures, more memories.
+          I hope we keep writing our story together.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="eyebrow">Chapter Two</div>
+    <h2 class="section-title">A Little Test of Love</h2>
+    <p class="intro">
+      Let's see how well you know our little world.
+      No pressure, beautiful. Just have fun!
+    </p>
+
+    <div class="quiz-box">
+      <div class="gold" id="quiz-progress">Question 1 of 3</div>
+      <h3 id="question">Who makes my day better just by being there?</h3>
+      <div class="answers" id="answers"></div>
+      <p id="quiz-feedback" aria-live="polite"></p>
+      <button class="button" id="next-question"
+        onclick="nextQuestion()" hidden>
+        Next question →
+      </button>
+    </div>
+  </section>
+
+  <section class="letter-section" id="letter">
+    <div class="eyebrow">Chapter Three</div>
+    <h2 class="section-title">A Letter Just for You</h2>
+    <p class="intro">
+      There's something I've been wanting to tell you.
+      Tap the envelope to open your letter.
+    </p>
+
+    <div class="envelope">💌</div>
+    <button class="button" id="letter-button" onclick="openLetter()">
+      Open my letter
+    </button>
+
+    <div id="love-letter">
+      <h3>To my favorite person,</h3>
+      <p>
+        I don't always know how to put my feelings into
+        words, but I hope you know how special you are to me.
+      </p>
+      <p>
+        You make ordinary moments feel a little more
+        beautiful. Your smile, your laugh, and even our
+        silly little conversations mean more to me than
+        I can explain.
+      </p>
+      <p>
+        I can't promise that every day will be perfect.
+        But I want to keep learning about you, supporting
+        you, laughing with you, and making memories with you.
+      </p>
+      <p>
+        Thank you for being you. If I could choose again,
+        I'd still want the chance to find you.
+      </p>
+      <p class="gold" style="color:#8e253b;">
+        With all my love,<br>
+        <strong>Your love (kaushal) ♥</strong>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Made with love, just for you <span class="heart">♥</span>
+    <br>
+    <span id="footer-names">Our story is still being written.</span>
+  </footer>
+
+  <script>
+    // PERSONALIZE YOUR WEBSITE HERE
+    const girlfriendName = "Shivani"
+    const yourName = "Your love (kaushal)""
+
+    document.getElementById("her-name").textContent = girlfriendName;
+    document.getElementById("footer-names").textContent =
+      yourName + " ♥ " + girlfriendName;
+
+    function startSurprise() {
+      document.getElementById("welcome-message").textContent =
+        "You are my favorite kind of magic. ♥";
+      document.getElementById("story").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    // A little floating-heart effect
+    for (let i = 0; i < 18; i++) {
+      const petal = document.createElement("span");
+      petal.className = "petal";
+      petal.textContent = Math.random() > 0.5 ? "♥" : "✿";
+      petal.style.left = Math.random() * 100 + "%";
+      petal.style.animationDelay = Math.random() * 9 + "s";
+      petal.style.animationDuration = (7 + Math.random() * 7) + "s";
+      petal.style.fontSize = (12 + Math.random() * 16) + "px";
+      document.querySelector(".hero").appendChild(petal);
+    }
+
+    // PERSONALIZE THESE QUIZ QUESTIONS LATER
+    const questions = [
+      {
+        question: "Who makes my day better just by being there?",
+        answers: ["My best friend", "You, obviously ♥", "Pizza", "My pillow"],
+        correct: 1,
+        reaction: "Aww! You already know the answer. ♥"
+      },
+      {
+        question: "What's my favorite thing about us?",
+        answers: [
+          "Our silly conversations",
+          "Our special memories",
+          "Being together",
+          "All of the above!"
+        ],
+        correct: 3,
+        reaction: "Exactly! It's all the little things together. 💕"
+      },
+      {
+        question: "What's waiting for you at the end of this website?",
+        answers: [
+          "A maths exam",
+          "A boring lecture",
+          "A little love letter",
+          "A pizza delivery"
+        ],
+        correct: 2,
+        reaction: "You found it! Your surprise is waiting below. 💌"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let answered = false;
+
+    function showQuestion() {
+      answered = false;
+      const q = questions[currentQuestion];
+
+      document.getElementById("quiz-progress").textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+      document.getElementById("question").textContent = q.question;
+      document.getElementById("quiz-feedback").textContent = "";
+      document.getElementById("next-question").hidden = true;
+
+      const answers = document.getElementById("answers");
+      answers.replaceChildren();
+
+      q.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.textContent = answer;
+        button.onclick = () => chooseAnswer(index);
+        answers.appendChild(button);
+      });
+    }
+
+    function chooseAnswer(index) {
+      if (answered) return;
+      answered = true;
+
+      const q = questions[currentQuestion];
+      document.getElementById("quiz-feedback").textContent =
+        index === q.correct
+          ? q.reaction
+          : "Hehe, nice try! Every answer is part of our fun. ♥";
+
+      document.querySelectorAll(".answer").forEach(button => {
+        button.disabled = true;
+        button.style.opacity = "0.7";
+      });
+
+      const next = document.getElementById("next-question");
+      next.hidden = false;
+      next.textContent =
+        currentQuestion === questions.length - 1
+          ? "Finish the quiz ♥"
+          : "Next question →";
+    }
+
+    function nextQuestion() {
+      if (!answered) return;
+
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        showQuestion();
+      } else {
+        document.getElementById("quiz-progress").textContent =
+          "Quiz complete! ♥";
+        document.getElementById("question").textContent =
+          "Every moment with you is a little adventure.";
+        document.getElementById("answers").replaceChildren();
+        document.getElementById("quiz-feedback").textContent =
+          "Your love letter is waiting for you below. 💌";
+        document.getElementById("next-question").hidden = true;
+      }
+    }
+
+    function openLetter() {
+      const letter = document.getElementById("love-letter");
+      letter.style.display = "block";
+      document.getElementById("letter-button").textContent =
+        "Your letter is open ♥";
+      document.getElementById("letter-button").disabled = true;
+      letter.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Forever ❤️</title>
+  <style>
+    :root { --wine:#6f102b; --rose:#e7a0ad; --gold:#e7c17a; --cream:#fff4e8; --ink:#16090e; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--cream); background:radial-gradient(ellipse at top,#42101f 0,#19090f 52%,#090609 100%); font-family:Georgia,'Times New Roman',serif; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    nav { position:sticky; top:0; z-index:10; display:flex; justify-content:center; gap:clamp(12px,4vw,38px); padding:14px 12px; background:#12070deF; border-bottom:1px solid #e7c17a45; backdrop-filter:blur(10px); font-size:.9rem; }
+    nav a:hover { color:var(--gold); }
+    .hero { min-height:88vh; display:grid; place-items:center; text-align:center; padding:55px 20px 70px; position:relative; overflow:hidden; }
+    .hero:before { content:""; position:absolute; inset:0; opacity:.18; background:radial-gradient(circle at 20% 25%,#c63855 0 1px,transparent 3px),radial-gradient(circle at 80% 70%,#e7c17a 0 1px,transparent 3px); background-size:90px 90px,120px 120px; pointer-events:none; }
+    .hero-inner { position:relative; max-width:820px; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.28em; font-size:.75rem; }
+    h1 { font-size:clamp(3rem,9vw,6.5rem); line-height:1.04; margin:20px 0; font-weight:normal; }
+    h1 em { color:var(--rose); font-weight:normal; }
+    .hero p { max-width:590px; margin:0 auto 26px; color:#f4dfe0; font-size:1.08rem; }
+    .btn { display:inline-block; border:1px solid var(--gold); background:linear-gradient(135deg,#8c1839,#4c0d23); color:#fff6e8; border-radius:999px; padding:12px 23px; cursor:pointer; font:inherit; box-shadow:0 8px 30px #0005; }
+    .btn:hover { transform:translateY(-2px); }
+    .hero-photo { display:block; width:min(260px,70vw); height:230px; object-fit:cover; object-position:center 35%; border-radius:48% 48% 8px 8px; border:2px solid var(--gold); margin:28px auto 0; box-shadow:0 0 45px #9d29454a; }
+    section { padding:75px 20px; max-width:1100px; margin:auto; }
+    .section-heading { text-align:center; margin-bottom:34px; }
+    .section-heading .eyebrow { letter-spacing:.2em; }
+    h2 { font-size:clamp(2rem,5vw,3.1rem); font-weight:normal; margin:7px 0; }
+    .section-heading p { color:#d8bfc5; margin:0 auto; max-width:620px; }
+    .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    .memory { background:linear-gradient(145deg,#32101d,#17090e); padding:12px; border:1px solid #d5aa665e; border-radius:12px; box-shadow:0 15px 45px #0003; }
+    .memory img { display:block; width:100%; height:clamp(220px,32vw,390px); object-fit:cover; border-radius:7px; }
+    .memory h3 { font-weight:normal; color:var(--gold); margin:14px 7px 2px; font-size:1.3rem; }
+    .memory p { color:#e9d5d8; margin:0 7px 10px; font-size:.97rem; }
+    .story-box { max-width:800px; margin:auto; padding:clamp(24px,5vw,48px); border:1px solid #d5aa666e; background:#200b13b8; border-radius:14px; text-align:center; }
+    .story-box p { color:#ead7dc; }
+    .heart { color:var(--rose); font-size:1.4rem; }
+    .quiz { max-width:700px; margin:auto; padding:28px; background:#200b13; border:1px solid #d5aa666e; border-radius:14px; }
+    .quiz-question { margin:0 0 22px; padding:0 0 20px; border-bottom:1px solid #ffffff1c; }
+    .quiz-question p { margin:0 0 10px; color:var(--gold); }
+    .quiz label { display:block; margin:7px 0; cursor:pointer; color:#f5e7e9; }
+    .quiz input { accent-color:#b12b4e; margin-right:8px; }
+    #quiz-result { margin-top:15px; color:var(--gold); }
+    .letter { max-width:760px; margin:auto; text-align:center; }
+    .letter-card { text-align:left; padding:clamp(25px,5vw,50px); margin-top:22px; color:#f6e6d8; line-height:1.9; background:linear-gradient(145deg,#f4e4d4,#dfc2ad); color:#4a1a29; border-radius:4px; box-shadow:0 18px 50px #0005; }
+    .letter-card h3 { font-size:1.8rem; font-weight:normal; margin-top:0; }
+    .hidden { display:none; }
+    footer { text-align:center; padding:35px 20px 50px; color:#cdaeb6; border-top:1px solid #e7c17a2b; }
+    @media(max-width:650px) { nav { gap:12px; font-size:.78rem; flex-wrap:wrap; } .gallery { grid-template-columns:1fr; } .memory img { height:auto; max-height:520px; } section { padding:55px 16px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#story">Our Story</a>
+    <a href="#memories">Our Memories</a>
+    <a href="#quiz">Love Quiz</a>
+    <a href="#letter">My Letter</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">A little corner of the universe, just for us</div>
+      <h1>To my <em>Shivani</em> <span class="heart">♥</span></h1>
+      <p>Out of all the people in this world, I'm so glad our paths crossed. This little website is a reminder that you are loved, cherished, and part of my favourite story.</p>
+      <a class="btn" href="#letter">Open your little surprise ♥</a>
+      <img class="hero-photo" src="images/shivani-portrait.jpg" alt="Shivani, looking beautiful">
+    </div>
+  </header>
+
+  <section id="story">
+    <div class="section-heading">
+      <div class="eyebrow">Chapter one, and every chapter after</div>
+      <h2>Our Little Forever</h2>
+      <p>Not a perfect story. Just ours — and that's what makes it special.</p>
+    </div>
+    <div class="story-box">
+      <div class="heart">♥</div>
+      <p>Shivani, some moments don't need grand plans to become precious. Sometimes it's a silly face, sharing a bite of food, sitting close together, or simply getting to see your smile.</p>
+      <p>These photos hold little pieces of us. And I hope we keep collecting moments, laughing at our own jokes, making new memories, and choosing each other through all the ordinary days too.</p>
+      <p><em>Our story is still being written.</em></p>
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="section-heading">
+      <div class="eyebrow">Little moments, big feelings</div>
+      <h2>Our Memory Garden</h2>
+      <p>Every photo is a tiny time capsule. Here are a few of my favourite snapshots.</p>
+    </div>
+    <div class="gallery">
+      <article class="memory">
+        <img src="images/burger-memory.jpg" alt="A playful selfie together while eating burgers">
+        <h3>Our Burger Date 🍔</h3>
+        <p>Good food, your funny little expressions, and a moment I get to keep.</p>
+      </article>
+      <article class="memory">
+        <img src="images/outdoor-selfie.jpg" alt="A close selfie together outdoors">
+        <h3>Close to You</h3>
+        <p>One of those simple photos that feels warm just because we're together.</p>
+      </article>
+      <article class="memory">
+        <img src="images/cinema-memory.jpg" alt="A selfie together in cinema seats">
+        <h3>Movie-Time Memories 🎬</h3>
+        <p>Red seats, a shared outing, and another little page in our story.</p>
+      </article>
+      <article class="memory">
+        <img src="images/cute-selfie.jpg" alt="A cute close-up selfie of Shivani">
+        <h3>Your Cute Side ♥</h3>
+        <p>Just you being you — and somehow that's more than enough to make me smile.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="section-heading">
+      <div class="eyebrow">Let's see what you remember</div>
+      <h2>A Tiny Love Quiz</h2>
+      <p>Choose your answers and see your result. You can change these questions to inside jokes later!</p>
+    </div>
+    <div class="quiz">
+      <div class="quiz-question">
+        <p>1. What's the best part of a date?</p>
+        <label><input type="radio" name="q1" value="a"> The food</label>
+        <label><input type="radio" name="q1" value="b"> Spending time together</label>
+        <label><input type="radio" name="q1" value="c"> Taking photos</label>
+      </div>
+      <div class="quiz-question">
+        <p>2. What should we collect more of?</p>
+        <label><input type="radio" name="q2" value="a"> Sweet memories</label>
+        <label><input type="radio" name="q2" value="b"> Silly arguments</label>
+        <label><input type="radio" name="q2" value="c"> All of the above, then make up</label>
+      </div>
+      <div class="quiz-question">
+        <p>3. Who deserves extra love today?</p>
+        <label><input type="radio" name="q3" value="a"> Shivani</label>
+        <label><input type="radio" name="q3" value="b"> Also Shivani</label>
+        <label><input type="radio" name="q3" value="c"> Still Shivani ♥</label>
+      </div>
+      <button class="btn" type="button" onclick="checkQuiz()">Show my result</button>
+      <p id="quiz-result" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="section-heading">
+      <div class="eyebrow">For your eyes, my love</div>
+      <h2>A Letter for Shivani</h2>
+      <p>A little message from my heart to yours.</p>
+    </div>
+    <div class="letter">
+      <button class="btn" id="reveal-button" type="button" onclick="revealLetter()">Open your letter 💌</button>
+      <div class="letter-card hidden" id="love-letter">
+        <h3>My dearest Shivani,</h3>
+        <p>I made this little corner of the internet for you because sometimes a simple “I love you” doesn't feel big enough to hold everything I want to say.</p>
+        <p>I love the moments we share — the photos, the smiles, the silly expressions, and the everyday memories that might look small to someone else but mean something to me.</p>
+        <p>I can't promise that every day will be perfect, but I can promise to keep trying, to listen, to laugh with you, and to make more memories together. I hope this page reminds you that you matter to me, not just on special days, but on ordinary ones too.</p>
+        <p>Here's to more dates, more pictures, more laughter, and many more chapters in our story.</p>
+        <p>With all my love,</p>
+        <p><strong>Your favourite person ♥</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Made with love, just for Shivani ♥<br>
+    <small>Our story, our memories, our little forever.</small>
+  </footer>
+
+  <script>
+    function checkQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      const result = document.getElementById('quiz-result');
+      if (!q1 || !q2 || !q3) {
+        result.textContent = 'Choose an answer for all three questions first, love ♥';
+        return;
+      }
+      result.textContent = 'Correct answer: you deserve all the love, Shivani! ♥ Your score is ' +
+        [q1.value === 'b', q2.value === 'c', ['a','b','c'].includes(q3.value)].filter(Boolean).length +
+        ' out of 3. The real prize is another memory together.';
+    }
+    function revealLetter() {
+      document.getElementById('love-letter').classList.remove('hidden');
+      document.getElementById('reveal-button').textContent = 'Your letter is open ♥';
+      document.getElementById('love-letter').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  </script>
+</body>
+</html>
